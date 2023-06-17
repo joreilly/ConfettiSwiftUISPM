@@ -1,5 +1,5 @@
 # ConfettiSwiftUISPM
-Minimal version of Confetti i0S and macOS clients that consumes shared KMM code as Swift Package.  This uses the SwiftUI `Multiplatform App` template in XCode (supporting iOS and macOS) and uses same SwiftUI (and same package) for both.  The shared code makes use of 
+Minimal version of Confetti i0S and macOS clients that consumes shared KMM code (from https://github.com/joreilly/Confetti) as a Swift Package.  This uses the SwiftUI `Multiplatform App` template in XCode (supporting iOS and macOS) and uses same SwiftUI (and same package) for both.  The shared code makes use of 
 [Decompose](https://github.com/arkivanov/Decompose) and particular UI here shows list of sessions for particular conference (based on 
 observing UI state in `SessionsComponent`)
 
