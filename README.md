@@ -4,3 +4,29 @@ Minimal version of Confetti i0S and macOS clients that consumes shared KMM code 
 observing UI state in `SessionsComponent`)
 
 <img width="797" alt="Screenshot 2023-06-17 at 16 52 05" src="https://github.com/joreilly/ConfettiSwiftUISPM/assets/6302/ec6cfdf2-e35c-4d68-b7a7-c04f73ee20ba">
+
+
+Following is some of the SwiftUI used
+
+```
+struct SessionsListView: View {
+    let component: SessionsComponent
+    
+    @StateValue
+    private var uiState: SessionsUiState
+    
+    init(_ component: SessionsComponent) {
+        self.component = component
+        _uiState = StateValue(component.uiState)
+    }
+
+    var body: some View {
+        switch uiState {
+        case is SessionsUiStateLoading: ProgressView()
+        case is SessionsUiStateError: ErrorView()
+        case let state as SessionsUiStateSuccess: SessionsContentView(component: component, sessionUiState: state)
+        default: EmptyView()
+        }
+    }
+}
+```
