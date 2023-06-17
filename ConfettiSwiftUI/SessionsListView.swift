@@ -63,8 +63,6 @@ private struct SessionsContentView: View {
                 }
             }
         }
-        .listStyle(.insetGrouped)
-        .navigationBarTitle(sessionUiState.conferenceName, displayMode: .inline)
     }
 }
 
