@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/joreilly/Confetti",
       "state" : {
-        "revision" : "c5dfa791ce574acba9d946b07fc435afd36945ec",
-        "version" : "0.8.13"
+        "revision" : "da0543e1020b4dcf3406b5cebcb83ed7c564e3f4",
+        "version" : "0.9.7"
       }
     },
     {

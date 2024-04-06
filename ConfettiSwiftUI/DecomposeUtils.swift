@@ -22,22 +22,20 @@ import ConfettiKit
 }
 
 
-public class ObservableValue<T : AnyObject> : ObservableObject {
-    private let observableValue: Value<T>
 
+// Source: https://github.com/arkivanov/Decompose/blob/master/sample/app-ios/app-ios/DecomposeHelpers/ObservableValue.swift
+public class ObservableValue<T : AnyObject> : ObservableObject {
     @Published
     var value: T
 
-    private var observer: ((T) -> Void)?
+    private var cancellation: Cancellation?
     
     init(_ value: Value<T>) {
-        observableValue = value
-        self.value = observableValue.value
-        observer = { [weak self] value in self?.value = value }
-        observableValue.subscribe(observer: observer!)
+        self.value = value.value
+        self.cancellation = value.observe { [weak self] value in self?.value = value }
     }
 
     deinit {
-        observableValue.unsubscribe(observer: self.observer!)
+        cancellation?.cancel()
     }
 }
