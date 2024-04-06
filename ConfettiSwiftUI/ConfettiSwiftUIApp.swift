@@ -22,7 +22,7 @@ struct ConfettiSwiftUIApp: App {
         
         self.component = DefaultSessionsComponent(
             componentContext: DefaultComponentContext(lifecycle: lifecycle),
-            conference: "droidconsf2023", user: nil, onSessionSelected: {_ in }, onSignIn: {})
+            conference: "androidmakers2024", user: nil, onSessionSelected: {_ in }, onSignIn: {})
     }
     
     var body: some Scene {
